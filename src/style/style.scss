@@ -1,0 +1,34 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$platinum: #dee5e5;
+$jet: #39393a;
+$chillRed: #e00700;
+$green: #1a7526;
+$gray: #4c606b;
+$main: $platinum;
+$secondary: $gray;
+$primary: $green;
+// $success: $white;
+// $info: $yellow;
+
+// :root{
+//     --background-color: #{$platinum};
+//     --text-color: #{$jet};
+// }
+// html[data-bs-theme="light"] {
+//     --background-color: #{$platinum};
+//     --text-color: #{$jet};
+//     --nav-bar-color: #{$gray};
+// }
+
+// html[data-bs-theme="dark"] {
+//     --background-color: #{$jet};
+//     --text-color: #{$platinum};
+//     --nav-bar-color: #{$gray};
+// }
+
+// body {
+//   background-color: var(--background-color) !important;
+//   color: var(--text-color) !important;
+//   --nav-bar-color: $gray;
+// }

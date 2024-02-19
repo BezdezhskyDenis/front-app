@@ -1,13 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { BrowserRouter } from "react-router-dom";
+import { ModeProvider } from "./contexts/mode.context";
+// import { AuthProvider } from "./contexts/auth.context";
+import { AlertProvider } from "./contexts/alert.context";
+// import { CardsFilterProvider } from "./contexts/filter.context";
+
+// import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ModeProvider>
+      <AlertProvider>
+        <App />
+      </AlertProvider>
+      </ModeProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
