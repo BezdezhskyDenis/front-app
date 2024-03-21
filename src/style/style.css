@@ -11854,4 +11854,73 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.app {
+  position: relative !important;
+}
+
+.main {
+  position: relative !important;
+  margin-top: 60px !important;
+}
+
+.sidebar {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  position: fixed !important; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 2; /* Stay on top */
+  top: 60px; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+.navbar {
+  height: 60px;
+  width: 100%;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  z-index: 999;
+}
+
+[data-component=sidebar] .first-menu {
+  width: 80px;
+  padding-inline: 0 !important;
+  margin-inline: auto;
+  transition: width 0.5s;
+}
+
+[data-component=sidebar] .first-menu span {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  display: inline-block;
+  width: 0px;
+  transition: width 0.5s;
+}
+
+[data-component=sidebar] .first-menu li:hover {
+  background-color: #b3b3b3 !important;
+  color: #333333;
+}
+
+[data-component=sidebar] .first-menu a span {
+  text-align: left;
+}
+
+[data-component=sidebar] .first-menu li {
+  color: #666666;
+  text-align: center;
+}
+
+[data-component=sidebar] .first-menu:hover span {
+  opacity: 1;
+  visibility: visible;
+  width: 90px;
+}
+
+[data-component=sidebar] .first-menu:hover {
+  width: 180px;
 }/*# sourceMappingURL=style.css.map */

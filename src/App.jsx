@@ -8,6 +8,8 @@ import Home from './components/home';
 import NavBar from './components/navbar';
 import Footer from './components/footer';
 import PageAlert from './components/common/alert';
+import SideNavBar from './components/sideNavbar';
+import Dashboard  from './components/dashboard';
 
 function App() {
 
@@ -17,11 +19,13 @@ function App() {
     <div className="App">
       <header className="pb-3 sticky-top">
         <NavBar />
+        <SideNavBar />
         {alert && <PageAlert  />}
       </header>
-        <main className='flex-fill container mt-3'>
+        <main className='main flex-fill container mt-3 ps-5'>
           <Routes>
             <Route path="/" element={<Home headTitle="Welcome"/>} />
+            <Route path="/dashboard" element={<Dashboard headTitle="Dashboard"/>} />
             {/* <Route path="/about" element={<About headTitle="About"/>} />
             <Route path="/sign-in" element={<SignIn redirect="/" headTitle="SignIn"/>} />
             <Route path="/sign-up" element={<SignUp redirect="/sign-in" headTitle="Registration"/>}/>

@@ -16,7 +16,7 @@ const NavBar = () => {
     <nav className={`navbar navbar-expand-md shadow-sm bg-${mode}`} data-bs-theme={mode}>
       <div className="container align-items-center">
         <Link to="/" className="navbar-brand">
-          OIM 
+          Phoenix SDB 
         </Link>
         <button
           className="navbar-toggler"

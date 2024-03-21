@@ -8,7 +8,7 @@ const Home = ({headTitle}) => {
   // const { filteredCards } = useCardsFilterContext();
 
   return (
-    <>
+    <div className='container'>
     <PageHeader
       title={headTitle}
       description="Here you can find business cards from all categories"
@@ -23,7 +23,7 @@ const Home = ({headTitle}) => {
         <div className='text-bg-danger fs-1'>test</div>
         <div className='text-bg-secondary fs-1'>test</div>
       </div>
-      </>
+      </div>
   );
 };
 
