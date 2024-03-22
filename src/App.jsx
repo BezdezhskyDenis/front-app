@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Routes } from "react-router-dom";
 
 import { useAlert } from './contexts/alert.context';
+import { useUser } from './contexts/user.context';
 
 import Home from './components/home';
 import NavBar from './components/navbar';
@@ -10,11 +11,12 @@ import Footer from './components/footer';
 import PageAlert from './components/common/alert';
 import SideNavBar from './components/sideNavbar';
 import Dashboard  from './components/dashboard';
-
+import SignUp from "./components/signUp";
+import LogIn from "./components/logIn"
 function App() {
 
   const { alert, alertType } = useAlert();
-
+  const {signUpVisible, loginVisible} = useUser()
   return (
     <div className="App">
       <header className="pb-3 sticky-top">
@@ -22,13 +24,15 @@ function App() {
         <SideNavBar />
         {alert && <PageAlert  />}
       </header>
+        {signUpVisible && <SignUp/>}
+        {loginVisible && <LogIn/>}
         <main className='main flex-fill container mt-3 ps-5'>
           <Routes>
             <Route path="/" element={<Home headTitle="Welcome"/>} />
             <Route path="/dashboard" element={<Dashboard headTitle="Dashboard"/>} />
+            <Route path="/sign-up" element={<SignUp redirect="/sign-in" headTitle="Registration"/>}/>
             {/* <Route path="/about" element={<About headTitle="About"/>} />
             <Route path="/sign-in" element={<SignIn redirect="/" headTitle="SignIn"/>} />
-            <Route path="/sign-up" element={<SignUp redirect="/sign-in" headTitle="Registration"/>}/>
             <Route path="/sign-out" element={<SignOut  redirect="/" />} />
             <Route path="/my-cards/edit/:id" element={<CardManage  headTitle="Card Manage" redirect="/my-cards"/>}/>
             <Route path="/card/:id" element={<BusinessCardPage redirect="/"/>}/>

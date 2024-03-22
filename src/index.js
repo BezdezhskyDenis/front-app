@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ModeProvider } from "./contexts/mode.context";
 // import { AuthProvider } from "./contexts/auth.context";
 import { AlertProvider } from "./contexts/alert.context";
+import { UserProvider } from "./contexts/user.context";
 // import { CardsFilterProvider } from "./contexts/filter.context";
 
 // import "bootstrap/dist/css/bootstrap.css";
@@ -19,9 +20,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ModeProvider>
-      <AlertProvider>
-        <App />
-      </AlertProvider>
+        <UserProvider>
+          <AlertProvider>
+            <App />
+          </AlertProvider>
+        </UserProvider>
       </ModeProvider>
     </BrowserRouter>
   </React.StrictMode>

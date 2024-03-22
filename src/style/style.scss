@@ -1,4 +1,3 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
 
 $platinum: #dee5e5;
 $jet: #39393a;
@@ -11,91 +10,17 @@ $primary: $green;
 // $success: $white;
 // $info: $yellow;
 
-// :root{
-//     --background-color: #{$platinum};
-//     --text-color: #{$jet};
-// }
-// html[data-bs-theme="light"] {
-//     --background-color: #{$platinum};
-//     --text-color: #{$jet};
-//     --nav-bar-color: #{$gray};
-// }
 
-// html[data-bs-theme="dark"] {
-//     --background-color: #{$jet};
-//     --text-color: #{$platinum};
-//     --nav-bar-color: #{$gray};
-// }
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./bars";
+@import "./signUp";
 
-// body {
-//   background-color: var(--background-color) !important;
-//   color: var(--text-color) !important;
-//   --nav-bar-color: $gray;
-// }
+
+
 .app {
   position: relative !important;
 }
 .main {
   position: relative !important;
   margin-top: 60px !important;
-}
-.sidebar {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  position: fixed !important; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 2; /* Stay on top */
-  top: 60px; /* Stay at the top */
-  left: 0;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-
-.navbar {
-  height: 60px;
-  width: 100%;
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  z-index: 999;
-}
-
-[data-component=sidebar] .first-menu {
-  // position: fixed;
-  // height: 100vw;
-  width: 80px;
-  padding-inline: 0 !important;
-  margin-inline: auto;
-  // top: 60px;
-  // overflow: hidden;
-  transition: width 0.5s;
-}
-
-[data-component=sidebar] .first-menu span {
-  font-size: 14px;
-  // white-space: nowrap;
-  font-family: "Open Sans", sans-serif;
-  opacity: 0;
-  visibility: hidden;
-  display: inline-block;
-  width: 0px;
-  transition: width 0.5s;
-}
-[data-component=sidebar] .first-menu li:hover {
-  background-color: tint-color(gray, 40%) !important;
-  color: tint-color(black, 20%);
-}
-[data-component=sidebar] .first-menu a span {
-  text-align: left;
-}
-[data-component=sidebar] .first-menu li {
-  color: tint-color(black, 40%);
-  text-align: center;
-}
-[data-component=sidebar] .first-menu:hover span {
-  opacity: 1;
-  visibility: visible;
-  width: 90px;
-}
-[data-component=sidebar] .first-menu:hover {
-  width: 180px;
 }
