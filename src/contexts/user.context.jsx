@@ -7,8 +7,10 @@ const fn_error_context_must_be_used = () => {
 export const userContext = createContext({
   signUpVisible: null,
   loginVisible: null,
+  userConnectionVisible: null,
   handleSignUpChange: fn_error_context_must_be_used,
   handleLoginChange: fn_error_context_must_be_used,
+  handleSignSwitch: fn_error_context_must_be_used,
 });
 userContext.displayName = "user";
 
@@ -17,13 +19,22 @@ export function UserProvider({ children }) {
   const [signUpVisible, setSignUpVisible] = useState(false); 
   
   const [loginVisible, setLoginVisible] = useState(false);
+
+  const [userConnectionVisible, setUserConnection] = useState(false);
   
   const handleSignUpChange = () => {
+    setUserConnection(!userConnectionVisible)
     setSignUpVisible(!signUpVisible)
   }
 
   const handleLoginChange = () => {
+    setUserConnection(!userConnectionVisible)
     setLoginVisible(!loginVisible)
+  }
+  
+  const handleSignSwitch = () => {
+    setLoginVisible(!loginVisible)
+    setSignUpVisible(!signUpVisible)
   }
 
   return (
@@ -31,8 +42,10 @@ export function UserProvider({ children }) {
       value={{
         signUpVisible,
         loginVisible,
+        userConnectionVisible,
         handleSignUpChange,
-        handleLoginChange
+        handleLoginChange,
+        handleSignSwitch
       }}
     >
       {children}

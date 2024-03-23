@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter } from "react-router-dom";
 import { ModeProvider } from "./contexts/mode.context";
-// import { AuthProvider } from "./contexts/auth.context";
+import { AuthProvider } from "./contexts/auth.context";
 import { AlertProvider } from "./contexts/alert.context";
 import { UserProvider } from "./contexts/user.context";
 // import { CardsFilterProvider } from "./contexts/filter.context";
@@ -19,13 +19,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ModeProvider>
-        <UserProvider>
-          <AlertProvider>
-            <App />
-          </AlertProvider>
-        </UserProvider>
-      </ModeProvider>
+      <AuthProvider>
+        <ModeProvider>
+          <UserProvider>
+            <AlertProvider>
+              <App />
+            </AlertProvider>
+          </UserProvider>
+        </ModeProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
